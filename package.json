@@ -1,0 +1,25 @@
+{
+  "name": "slacktion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/slacktion.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node lib/sample.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cag-group/Slacktion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cag-group/Slacktion/issues"
+  },
+  "homepage": "https://github.com/cag-group/Slacktion#readme",
+  "dependencies": {
+    "slackbots": "^1.1.0"
+  }
+}
