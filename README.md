@@ -1,4 +1,5 @@
-# Slacktion. A command interaction library for slackbots.
+# Slacktion.
+A command interaction library for slackbots.
 
 This exceptionally beta.
 
@@ -44,6 +45,7 @@ bot.on('start', () => {
   slacktion.start()
 })
 ```
+
 
 ### As a slack app
 ```
