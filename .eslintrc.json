@@ -1,0 +1,22 @@
+{
+  "env" : {
+    "node" : true,
+    "mocha" : true
+  },
+  "parserOptions" : {
+    "ecmaVersion" : 2017
+  },
+  "extends" : "standard",
+  "plugins" : ["mocha"],
+  "rules" : {
+    "no-mixed-operators": "off",
+    "padded-blocks" : "off",
+    "no-var" : "error",
+    "no-multi-spaces": ["error", { "exceptions": { "VariableDeclarator": true, "Propperty": true} }],
+    "prefer-arrow-callback": ["error", { "allowUnboundThis": false }],
+    "space-before-function-paren": ["error", "never"],
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "arrow-parens": ["error", "as-needed"],
+    "strict": ["error", "global"]
+  }
+}
