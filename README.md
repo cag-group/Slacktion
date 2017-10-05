@@ -2,8 +2,9 @@
 
 This exceptionally beta.
 
-## Usage example
+## Usage examples
 
+### As a slack RTM bot.
 ```
 const SlackBot = require('slackbots')
 const Slacktion = require('./slacktion')
@@ -44,7 +45,36 @@ bot.on('start', () => {
 })
 ```
 
-##Exposed functions
+### As a slack app
+```
+const Slacktion = require('./slacktion')
+
+const slacktion = new Slacktion()
+
+slacktion.registerAction({
+  name: 'add',
+  description: 'Adds two numbers',
+  args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
+  fn: async(username, replyFn, x, y) => {
+    await replyFn('Adding ' + x + ' and ' + y)
+    return parseInt(x) + parseInt(y)
+  }
+})
+
+slacktion.registerAction({
+  name: 'sub',
+  description: 'Subtracts two numbers',
+  args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
+  fn: async(username, replyFn, x, y) => {
+    await replyFn('subtracting ' + x + ' and ' + y)
+    return parseInt(x) - parseInt(y)
+  }
+})
+
+module.exports.bot1 = slacktion.getExportFunction()
+```
+
+## Exposed functions
 
 ```
 class Slacktion {
@@ -62,6 +92,11 @@ class Slacktion {
    * Starts listening to messages.
    */
   start()
+
+  /**
+   * Returns the function to be exported when running as a google cloud function
+   */
+  getExportFunction()
 
   /** Adds a new command to the bot.
    * The action provided should be an object of the following form fields:
