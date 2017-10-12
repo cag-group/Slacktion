@@ -2,7 +2,7 @@
   "name": "slacktion",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/httpExample.js",
+  "main": "lib/slacktion.js",
   "directories": {
     "lib": "lib"
   },
