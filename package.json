@@ -1,13 +1,23 @@
 {
   "name": "slacktion",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
-  "main": "lib/slacktion.js",
+  "main": "dist/lib/slacktion.js",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "dist": "dist"
   },
   "scripts": {
-    "test": "node lib/sample.js"
+    "test": "node lib/sample.js",
+    "postinstall": "./node_modules/.bin/babel lib/slacktion.js -d dist/"
+  },
+  "babel": {
+    "plugins": [
+      "async-to-promises"
+    ],
+    "presets": [
+      "es2015-node"
+    ]
   },
   "repository": {
     "type": "git",
