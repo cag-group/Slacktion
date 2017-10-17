@@ -48,6 +48,12 @@ bot.on('start', () => {
 
 
 ### As a slack app
+
+**NOTE:** If you are running the bot as a slack-app you should
+make sure that the action always returns within three seconds or
+the request will timeout, you can keep using the
+`replyFn` indefinetly(?) though.
+
 ```
 const Slacktion = require('./slacktion')
 
