@@ -55,31 +55,33 @@ the request will timeout, you can keep using the
 `replyFn` indefinetly(?) though.
 
 ```
-const Slacktion = require('./slacktion')
+const Slacktion = require('../lib/slacktion')
 
-const slacktion = new Slacktion()
+module.exports.bot1 = function(req, resp) {
+  const slacktion = new Slacktion()
 
-slacktion.registerAction({
-  name: 'add',
-  description: 'Adds two numbers',
-  args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
-  fn: async(username, replyFn, x, y) => {
-    await replyFn('Adding ' + x + ' and ' + y)
-    return parseInt(x) + parseInt(y)
-  }
-})
+  slacktion.registerAction({
+    name: 'add',
+    description: 'Adds two numbers',
+    args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
+    fn: async(username, replyFn, x, y) => {
+      await replyFn('Adding ' + x + ' and ' + y)
+      return parseInt(x) + parseInt(y)
+    }
+  })
 
-slacktion.registerAction({
-  name: 'sub',
-  description: 'Subtracts two numbers',
-  args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
-  fn: async(username, replyFn, x, y) => {
-    await replyFn('subtracting ' + x + ' and ' + y)
-    return parseInt(x) - parseInt(y)
-  }
-})
+  slacktion.registerAction({
+    name: 'sub',
+    description: 'Subtracts two numbers',
+    args: [{name: 'x', optional: false}, {name: 'y', optional: false}],
+    fn: async(username, replyFn, x, y) => {
+      await replyFn('subtracting ' + x + ' and ' + y)
+      return parseInt(x) - parseInt(y)
+    }
+  })
 
-module.exports.bot1 = slacktion.getExportFunction()
+  return slacktion.handleHttpRequest(req, resp)
+}
 ```
 
 ## Exposed functions
