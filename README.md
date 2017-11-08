@@ -42,7 +42,7 @@ bot.on('start', () => {
     }
   })
 
-  slacktion.start()
+  slacktion.startListener()
 })
 ```
 
@@ -101,7 +101,7 @@ class Slacktion {
   /**
    * Starts listening to messages.
    */
-  start()
+  startListener()
 
   /**
    * Handles an HTTP request (call this from an Express HTTP handler)
