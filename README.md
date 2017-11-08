@@ -104,9 +104,12 @@ class Slacktion {
   start()
 
   /**
-   * Returns the function to be exported when running as a google cloud function
+   * Handles an HTTP request (call this from an Express HTTP handler)
+   *
+   * @param req The Express HTTP Request object
+   * @param resp The Express HTTP Response object
    */
-  getExportFunction()
+  handleHttpRequest(req, resp) {
 
   /** Adds a new command to the bot.
    * The action provided should be an object of the following form fields:
