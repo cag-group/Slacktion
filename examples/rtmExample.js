@@ -1,8 +1,8 @@
 const SlackBot = require('slackbots')
-const Slacktion = require('./slacktion')
+const Slacktion = require('../lib/slacktion')
 
 const bot = new SlackBot({
-  token: 'derp', // Add a bot https://my.slack.com/services/new/bot and put the token 
+  token: 'derp', // Add a bot https://my.slack.com/services/new/bot and put the token
   name: 'caspar-david'
 })
 

@@ -1,4 +1,4 @@
-const Slacktion = require('./slacktion')
+const Slacktion = require('../lib/slacktion')
 
 const slacktion = new Slacktion()
 
