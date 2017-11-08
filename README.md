@@ -5,7 +5,7 @@ This exceptionally beta.
 
 ## Usage examples
 
-### As a slack RTM bot.
+### As a slack RTM (Real Time Messaging) bot.
 ```
 const SlackBot = require('slackbots')
 const Slacktion = require('./slacktion')
