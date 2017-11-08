@@ -33,5 +33,5 @@ bot.on('start', () => {
     }
   })
 
-  slacktion.start()
+  slacktion.startListener()
 })
